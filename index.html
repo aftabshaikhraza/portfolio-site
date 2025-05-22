@@ -260,12 +260,9 @@
     <h2>Contact Me</h2>
     <p>If you'd like to collaborate or have any questions, feel free to reach out!</p>
 
-  <form action="https://formsubmit.co/aftabshaikhraza26@gmail.com" method="POST" class="contact-form">
-  <!-- Prevent spam bots -->
+  <form id="contact-form" action="https://formsubmit.co/aftabshaikhraza26@gmail.com" method="POST" class="contact-form">
   <input type="hidden" name="_captcha" value="false">
-
-  <!-- Redirect back to contact section -->
-  <input type="hidden" name="_next" value="https://portfolio-site-q5dg.onrender.com#contact">
+  <input type="hidden" name="_next" value="https://portfolio-site-q5dg.onrender.com#thanks">
 
   <label for="name">Name:</label>
   <input type="text" name="name" id="name" required />
@@ -277,9 +274,14 @@
   <textarea name="message" id="message" rows="5" required></textarea>
 
   <button type="submit" class="submit-btn">Send Message</button>
-</form>
+  </form>
 
- <p class="alt-contact">Or email me directly at: <strong>shaikh.mohdaf@northeastern.edu</strong></p>
+<!-- Hidden thank-you message -->
+<div id="thank-you" style="display:none; margin-top: 2rem; color: #e0e0e0;">
+  <h3>Thank you! Your message has been sent. 🚀</h3>
+</div>
+
+    <p class="alt-contact">Or email me directly at: <strong>shaikh.mohdaf@northeastern.edu</strong></p>
 
 <div class="social-icons" data-aos="zoom-in">
   <p>Connect with me:</p>
@@ -312,6 +314,14 @@
     duration: 800,         // animation duration in ms
     easing: 'ease-in-out', // smoothness
   });
+</script>
+
+<script>
+  // Show thank-you message if redirected with "#thanks"
+  if (window.location.hash === "#thanks") {
+    document.getElementById("contact-form").style.display = "none";
+    document.getElementById("thank-you").style.display = "block";
+  }
 </script>
 
 </body>
