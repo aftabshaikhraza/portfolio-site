@@ -260,18 +260,24 @@
     <h2>Contact Me</h2>
     <p>If you'd like to collaborate or have any questions, feel free to reach out!</p>
 
-    <form class="contact-form" action="https://formspree.io/f/xpwdepzy" method="POST">
-      <label for="name">Name:</label>
-      <input type="text" name="name" id="name" required />
+    <form action="https://formsubmit.co/aftabshaikhraza26@gmail.com" method="POST" class="contact-form">
+  <!-- Prevent spam bots -->
+  <input type="hidden" name="_captcha" value="false">
 
-      <label for="email">Email:</label>
-      <input type="email" name="email" id="email" required />
+  <!-- Redirect back to contact section -->
+  <input type="hidden" name="_next" value="#contact">
 
-      <label for="message">Message:</label>
-      <textarea name="message" id="message" rows="5" required></textarea>
+  <label for="name">Name:</label>
+  <input type="text" name="name" id="name" required />
 
-      <button type="submit" class="submit-btn">Send Message</button>
-    </form>
+  <label for="email">Email:</label>
+  <input type="email" name="email" id="email" required />
+
+  <label for="message">Message:</label>
+  <textarea name="message" id="message" rows="5" required></textarea>
+
+  <button type="submit" class="submit-btn">Send Message</button>
+</form>
 
     <p class="alt-contact">Or email me directly at: <strong>shaikh.mohdaf@northeastern.edu</strong></p>
 
