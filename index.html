@@ -277,8 +277,23 @@
 </form>
 
 <!-- ✅ Thank-you message (initially hidden) -->
-<div id="thank-you" style="display: none; margin-top: 1.5rem; color: #4caf50; font-weight: 600;">
+<div id="thanks" style="display: none; margin-top: 1.5rem; color: #4caf50; font-weight: 600;">
   ✅ Thank you! Your message has been sent.
+  <br /><br />
+  <button onclick="showContactForm()" style="
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    background: transparent;
+    color: #e84545;
+    border: 1px solid #e84545;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  " onmouseover="this.style.background='#e84545'; this.style.color='white';"
+     onmouseout="this.style.background='transparent'; this.style.color='#e84545';">
+    Send Another Message
+  </button>
 </div>
 
     <p class="alt-contact">Or email me directly at: <strong>shaikh.mohdaf@northeastern.edu</strong></p>
@@ -317,10 +332,25 @@
 </script>
 
 <script>
-  // Show thank-you message if redirected with "#thanks"
-  if (window.location.hash === "#thanks") {
-    document.getElementById("contact-form").style.display = "none";
-    document.getElementById("thank-you").style.display = "block";
+  // Detect redirect hash and scroll to contact section
+  window.onload = function () {
+    if (window.location.hash === "#thanks") {
+      document.getElementById("contact-form").style.display = "none";
+      document.getElementById("thanks").style.display = "block";
+
+      // Scroll to contact section manually
+      const contactSection = document.getElementById("contact");
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
+  function showContactForm() {
+    document.getElementById("contact-form").reset();
+    document.getElementById("contact-form").style.display = "block";
+    document.getElementById("thanks").style.display = "none";
+    document.getElementById("name").focus();
   }
 </script>
 
