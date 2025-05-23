@@ -600,12 +600,14 @@ html {
   background: #e84545;
   color: white;
   border: none;
-  padding: 0.9rem;
+  padding: 0.9rem 1.8rem;
   font-size: 1rem;
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s ease;
   align-self: center;
+  display: block;
+  margin-top: 1rem;
 }
 
 .contact-form button:hover {
