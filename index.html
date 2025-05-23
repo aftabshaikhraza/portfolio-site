@@ -252,57 +252,59 @@
       </ul>
     </div>
 
-    <!-- Contact Section -->
-<!-- Contact Section -->
+ 
 <!-- Contact Section -->
 <section id="contact" data-aos="fade-up">
   <div class="contact-wrapper">
     <h2>Contact Me</h2>
     <p>If you'd like to collaborate or have any questions, feel free to reach out!</p>
 
-  <form id="contact-form" action="https://formsubmit.co/aftabshaikhraza26@gmail.com" method="POST" class="contact-form">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_next" value="https://portfolio-site-q5dg.onrender.com#thanks">
+    <!-- Contact Form -->
+    <div id="form-wrapper">
+      <form id="contact-form" action="https://formsubmit.co/aftabshaikhraza26@gmail.com" method="POST" class="contact-form">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://portfolio-site-q5dg.onrender.com#thanks">
 
-  <label for="name">Name:</label>
-  <input type="text" name="name" id="name" required />
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required />
 
-  <label for="email">Email:</label>
-  <input type="email" name="email" id="email" required />
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required />
 
-  <label for="message">Message:</label>
-  <textarea name="message" id="message" rows="5" required></textarea>
+        <label for="message">Message:</label>
+        <textarea name="message" id="message" rows="5" required></textarea>
 
-  <button type="submit" class="submit-btn">Send Message</button>
-</form>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
 
-<!-- ✅ Thank-you message (initially hidden) -->
-<div id="thanks" style="display: none; margin-top: 1.5rem; color: #4caf50; font-weight: 600;">
-  ✅ Thank you! Your message has been sent.
-  <br /><br />
-  <button onclick="showContactForm()" style="
-    margin-top: 1rem;
-    padding: 0.6rem 1.2rem;
-    background: transparent;
-    color: #e84545;
-    border: 1px solid #e84545;
-    border-radius: 8px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  " onmouseover="this.style.background='#e84545'; this.style.color='white';"
-     onmouseout="this.style.background='transparent'; this.style.color='#e84545';">
-    Send Another Message
-  </button>
-</div>
+    <!-- Thank You Message -->
+    <div id="thanks" style="display: none; margin-top: 1.5rem; color: #4caf50; font-weight: 600;">
+      ✅ Thank you! Your message has been sent.
+      <br /><br />
+      <button onclick="showContactForm()" style="
+        margin-top: 1rem;
+        padding: 0.6rem 1.2rem;
+        background: transparent;
+        color: #e84545;
+        border: 1px solid #e84545;
+        border-radius: 8px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      " onmouseover="this.style.background='#e84545'; this.style.color='white';"
+         onmouseout="this.style.background='transparent'; this.style.color='#e84545';">
+        Send Another Message
+      </button>
+    </div>
 
     <p class="alt-contact">Or email me directly at: <strong>shaikh.mohdaf@northeastern.edu</strong></p>
 
-<div class="social-icons" data-aos="zoom-in">
-  <p>Connect with me:</p>
-  <a href="https://github.com/aftabshaikhraza" target="_blank"><i class="fab fa-github"></i></a>
-  <a href="https://www.linkedin.com/in/aftab-shaikh-841064230/" target="_blank"><i class="fab fa-linkedin"></i></a>
-</div>
+    <div class="social-icons" data-aos="zoom-in">
+      <p>Connect with me:</p>
+      <a href="https://github.com/aftabshaikhraza" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/aftab-shaikh-841064230/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
   </div>
 </section>
 
@@ -314,31 +316,27 @@
   </div>
 </footer>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
-  <script>
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    once: true,
+    duration: 800,
+    easing: 'ease-in-out'
+  });
+
   function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-</script>
-<script>
-  AOS.init({
-    once: true,            // animate only once
-    duration: 800,         // animation duration in ms
-    easing: 'ease-in-out', // smoothness
-  });
-</script>
 
-<script>
-  // Detect redirect hash and scroll to contact section
+  // Show thank-you message if redirected with #thanks
   window.onload = function () {
     if (window.location.hash === "#thanks") {
       document.getElementById("contact-form").style.display = "none";
       document.getElementById("thanks").style.display = "block";
 
-      // Scroll to contact section manually
+      // Scroll to contact
       const contactSection = document.getElementById("contact");
       if (contactSection) {
         contactSection.scrollIntoView({ behavior: 'smooth' });
@@ -353,6 +351,3 @@
     document.getElementById("name").focus();
   }
 </script>
-
-</body>
-</html>
