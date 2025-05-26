@@ -154,6 +154,27 @@ body {
   opacity: 1;
 }
 
+.project-card .btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  color: #f0f0f0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 6px;
+  display: inline-block;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+}
+
+.project-card .btn:hover {
+  background: #e84545;
+  color: #fff;
+  border-color: #e84545;
+}
+
 /* Skills Section */
 #skills {
   padding: 4rem 2rem;
@@ -602,13 +623,14 @@ html {
   border: none;
   padding: 0.9rem 1.8rem;
   font-size: 1rem;
+  font-weight: 500;
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s ease;
-  align-self: center;
   display: block;
-  margin-top: 1rem;
-}
+  margin: 1.5rem auto 0 auto; /* ⬅️ Centers the button */
+  text-align: center;
+}w
 
 .contact-form button:hover {
   background: #d63c3c;
@@ -628,6 +650,52 @@ html {
   font-weight: 500;
   cursor: pointer;
   transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #d63c3c;
+}
+
+/* Thank-you message styling */
+.thank-you-message {
+  display: none;
+  color: #4caf50;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.resend-btn {
+  background: transparent;
+  color: #e84545;
+  border: 1px solid #e84545;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.resend-btn:hover {
+  background: #e84545;
+  color: white;
+}
+
+/* Fix button alignment */
+.contact-form button {
+  background: #e84545;
+  color: white;
+  border: none;
+  padding: 0.9rem 1.8rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: block;
+  margin: 1rem auto 0 auto;
+  align-self: center;
 }
 
 .contact-form button:hover {
